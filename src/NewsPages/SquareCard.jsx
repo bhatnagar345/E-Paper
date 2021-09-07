@@ -48,9 +48,9 @@ const ControlledPopup = (props) => {
                 <div className="popup">
                     <h3>{props.title}</h3>
                     <p className="card-dates"> {props.publishedAt}</p>
-                    <a href={props.url} target="_blank" >{props.url}</a>
+                    <a href={props.url}  >{props.url}</a>
                     <div className="imge">
-                    <div style={{width:"100%"},{height:"100%"}}>
+                    <div style={{width:"80%",height:"100%"}}>
                     <img src={props.image} alt="util" />
                     </div>
                     </div>

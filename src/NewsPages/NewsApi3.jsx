@@ -6,9 +6,17 @@ const NewsApi3 =(props)=> {
     const [apiss, setapiss] = useState([]);
     
     const getdata3 = async ()=>{
-        const restss = await fetch("https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=0888d40d713149ec954616ce5f3ed61b");
-        const actualss = await restss.json();
-        setapiss(actualss.articles);
+         const rests = await fetch("https://bing-news-search1.p.rapidapi.com/news?textFormat=Raw&safeSearch=Off", {
+            "method": "GET",
+            "headers": {
+                "x-bingapis-sdk": "true",
+                "x-rapidapi-host": "bing-news-search1.p.rapidapi.com",
+                "x-rapidapi-key": "c2178f2e31mshbd82148e75d8de5p1f7640jsnf88a5abb8f2b"
+            }
+        });
+        const actuals = await rests.json();
+        
+        setapiss(actuals.value);
         
     }
     
@@ -18,11 +26,11 @@ const NewsApi3 =(props)=> {
      
     
     
-    let page3 = apiss.slice(7,13);
+    let page3 = apiss.slice(10,17);
     
     if(props.id)
     {
-         page3 = apiss.slice(7,12); 
+         page3 = apiss.slice(10,16); 
     }
    
     
@@ -41,18 +49,19 @@ const NewsApi3 =(props)=> {
      page3.map((value,index)=>{
          
          return(
-              <>
-              <ControlledPopup key ={index}
-              indu ={index}
-              delCard = {delCard}
-              title = {value.title}
-              image = {value.urlToImage}
-              url = {value.url}
-              content ={value.content}
-              publishedAt = {value.publishedAt}
-              id = {props.id}
-              />
-              </>
+            <>
+            <ControlledPopup key ={index}
+            indu ={index}
+            delCard = {delCard}
+            title = {value.name}
+            image = {value.image.thumbnail.contentUrl}
+            url = {value.url}
+            content ={value.description}
+            publishedAt = {value.datePublished.slice(1,19)}
+            id = {props.id}
+            
+            />
+            </>
          )
      })
   );

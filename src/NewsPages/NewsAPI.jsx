@@ -4,28 +4,41 @@ import ControlledPopup from './SquareCard';
 
 
 const NewsAPI =(props)=> {
-    const [api, setapi] = useState([]);
+    // const [api, setapi] = useState([]);
+    const [apiss, setapiss] = useState([])
     
-    const getdata = async ()=>{
-        const rest = await fetch(`https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=0888d40d713149ec954616ce5f3ed61b`);
-        const actual = await rest.json();
-        setapi(actual.articles);   
+    // const getdata = async ()=>{
+    //     const rest = await fetch(`https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=0888d40d713149ec954616ce5f3ed61b`);
+    //     const actual = await rest.json();
+    //     setapi(actual.articles);   
+    // }
+    const getsdata = async () =>{
+        const res = await fetch("https://bing-news-search1.p.rapidapi.com/news?textFormat=Raw&safeSearch=Off", {
+            "method": "GET",
+            "headers": {
+                "x-bingapis-sdk": "true",
+                "x-rapidapi-host": "bing-news-search1.p.rapidapi.com",
+                "x-rapidapi-key": "c2178f2e31mshbd82148e75d8de5p1f7640jsnf88a5abb8f2b"
+            }
+        });
+        const act = await res.json();
+        setapiss(act.value);
+        
     }
-    
     useEffect(() => {
-       getdata();
-       
+    //    getdata();
+       getsdata();
     }, []);
      
+    // console.log(apiss);
     
-    
-    let page1 = api.slice(1,7);
+    let page1 = apiss.slice(0,6);
     if(props.id)
     {
-         page1 = api.slice(1,6); 
+         page1 = apiss.slice(0,5); 
     }
     const delCard =(inde)=>{
-     setapi((olditem) => {
+     setapiss((olditem) => {
           return (
               olditem.filter((elem, index) => {
                   return index !== inde;
@@ -44,11 +57,11 @@ const NewsAPI =(props)=> {
                  <ControlledPopup key ={index}
                  indu ={index}
                  delCard = {delCard}
-                 title = {value.title}
-                 image = {value.urlToImage}
+                 title = {value.name}
+                 image = {value.image.thumbnail.contentUrl}
                  url = {value.url}
-                 content ={value.content}
-                 publishedAt = {value.publishedAt}
+                 content ={value.description}
+                 publishedAt = {value.datePublished.slice(1,19)}
                  id = {props.id}
                  
                  />

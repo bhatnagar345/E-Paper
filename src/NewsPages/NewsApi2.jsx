@@ -7,9 +7,16 @@ const NewsAPI2 =(props)=> {
     const [apis, setapis] = useState([]);
     
     const getdatas = async ()=>{
-        const rests = await fetch("https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=0888d40d713149ec954616ce5f3ed61b&page=2");
+        const rests = await fetch("https://bing-news-search1.p.rapidapi.com/news?textFormat=Raw&safeSearch=Off", {
+            "method": "GET",
+            "headers": {
+                "x-bingapis-sdk": "true",
+                "x-rapidapi-host": "bing-news-search1.p.rapidapi.com",
+                "x-rapidapi-key": "c2178f2e31mshbd82148e75d8de5p1f7640jsnf88a5abb8f2b"
+            }
+        });
         const actuals = await rests.json();
-        setapis(actuals.articles);
+        setapis(actuals.value);
         
     }
     useEffect(() => {
@@ -17,10 +24,10 @@ const NewsAPI2 =(props)=> {
        getdatas();
     
     }, []);
-     let page2 = apis.slice(1,7);
+     let page2 = apis.slice(5,11);
      if(props.id)
     {
-         page2 = apis.slice(1,6); 
+         page2 = apis.slice(5,10); 
     }
     
     const delCard =(inde)=>{
@@ -38,23 +45,28 @@ const NewsAPI2 =(props)=> {
         page2.map((value,index)=>{
             
             return(
-                 <>
+                <>
                  <ControlledPopup key ={index}
                  indu ={index}
                  delCard = {delCard}
-                 title = {value.title}
-                 image = {value.urlToImage}
+                 title = {value.name}
+                 image = {value.image.thumbnail.contentUrl}
                  url = {value.url}
-                 content ={value.content}
-                 publishedAt = {value.publishedAt}
+                 content ={value.description}
+                 publishedAt = {value.datePublished.slice(1,19)}
                  id = {props.id}
+                 
                  />
                  </>
             )
         })
      );
      
-        
+    //  return(
+    //     <>
+    //     <h3>I am Harsh Bhatnagar</h3>
+    //     </>
+    // );  
      
 }
 
