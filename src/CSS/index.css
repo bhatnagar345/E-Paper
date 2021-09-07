@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+body {
+  margin: 0;
+  
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Roboto', sans-serif;
+  background-color: #D8E7EA ;
+}
+
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 10px;
+  width: 100vw;
+  height: 100vh;
+  /* justify-cont?ent: center; */
+  /* align-items: center; */
+}
+.col-sm-3{
+  
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px -5px rgba(0,0,0,.3);
+  display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    flex-wrap:wrap;
+    box-sizing: border-box;
+}
+
+.col-sm-9{
+  border-radius: 10px;
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+.card_cont{
+  display: flex;
+  /* height: 85%; */
+  box-sizing: border-box;
+  /* flex-direction: column; */
+  overflow-y: auto;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-bottom: 5px;
+}
+
+
+/* Toggle Button */
+.toggle{
+  width: 165px;
+  height: 100px;
+  margin: 25px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px -5px rgba(0,0,0,0.3);
+}
+
+
+.toggle h5{
+  font-size: 18px;
+  font-weight: 600;
+}
+.buttons{
+  display: flex;
+  flex-direction: row;
+  
+}
+.buttons button{
+  /* background: none; */
+  border: none;
+  /* margin: 5px; */
+  padding: 10px;
+ 
+}
+
+/* FeedBack */
+.toggles{
+  width: 200px;
+  height: 100px;
+  margin: 25px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 7px;
+  box-shadow: 10px 10px 5px -5px rgba(0,0,0,0.3);
+}
+
+.toggles button{
+  border: none;
+  /* margin: 5px; */
+  padding: 7px;
+  border-radius: 5px;
+}
+
+.toggles h5{
+  font-size: 18px;
+  font-weight: 600;
+}
+.toggles h7{
+  font-weight: 600;
+}
+
+
+
+/* Hello Reader */
+.card{
+  width: 225px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 25px;
+  margin-top: 45px;
+  justify-content: center;
+  background-color: white;
+  box-shadow: 10px 10px 5px -5px rgba(0,0,0,0.3);
+}
+.card img{
+  border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    margin: 5px;
+    margin-right: 25px;
+    margin-left: 0px;
+
+}
+.body h5{
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+
+/* Contact Form */
+.container{
+  position: relative;
+  width: 600px;
+  /* border: 0.1px solid; */
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 30px 10px rgb(0 0 0 / 30%);
+  background-color: #D8E7EA ;
+  animation-name: exam;
+  animation-duration: 1s;
+}
+/* @keyframes exam {
+  from{
+    width: 0%;
+  }
+  to{
+    width:100%;
+  }
+}  */
+
+.container input{
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px -5px rgb(0 0 0 / 30%);
+  font-size: 15px;
+}
+
+#formGroupExampleInput{
+  font-weight: 600;
+  font-size: 13px;
+}
+.container textarea{
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px -5px rgb(0 0 0 / 30%);
+}
+.popclose{
+  position: absolute;
+    top: 15px;
+    right: 15px;
+    border: none;
+    background: none;
+}
+/* .popup-content{
+  margin: 0;
+  height: 100vh;
+} */
+@media (max-width: 700px){
+  .card{
+    margin: 0 25px;
+  }
+  .toggle{
+    margin: 5px 25px;
+    width: 125px;
+    height: 80px;
+    display: none;
+  }
+  .toggle .fa-2x{
+    height: 1px;
+  }
+  .buttons button{
+    /* background: none; */
+    border: none;
+    /* margin: 5px; */
+    padding: 5px;
+  }
+  .toggle h5{
+    font-size: 15px;
+  }
+  .body h5{
+    font-size: 15px;
+  }
+  .toggles{
+    width: 155px;
+    height: 75px;
+    margin: 5px 25px;
+  }
+ .toggles h5{
+    font-size: 15px;
+  }
+  .toggles h7{
+    font-size: 12px;
+  }
+  .container{
+    width: auto;
+    height: auto;
+  }
+}
