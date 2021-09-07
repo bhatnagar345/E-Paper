@@ -196,7 +196,7 @@ body {
     margin: 5px 25px;
     width: 125px;
     height: 80px;
-    display: none;
+    /* display: none; */
   }
   .toggle .fa-2x{
     height: 1px;
