@@ -229,3 +229,7 @@ body {
     height: auto;
   }
 }
+
+button:active{
+  border: none;
+}

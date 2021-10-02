@@ -41,7 +41,7 @@ const ControlledPopup = (props) => {
                     <p className="card-dates"> {props.publishedAt}</p>
                     {/* <a href="#" className="btn btn-primary">Go somewhere</a> */}
                 </div>
-                <button className={classNames("btn-closed", { "btn-closes": props.id })} onClick={() => { props.delCard(props.indu) }}><i class="fal fa-times fa-lg" style={{ color: "tomato" }}></i></button>
+                <button className={classNames("btn-closed", { "btn-closes": props.id })} onClick={() => { props.delCard(props.indu) }}><i className="fal fa-times fa-lg" style={{ color: "tomato" }}></i></button>
             </div>
             <Popup open={open} closeOnDocumentClick onClose={closeModal}  className="popup">
 
@@ -55,7 +55,7 @@ const ControlledPopup = (props) => {
                     </div>
                     </div>
                     <p>{props.content}</p>
-                    <button className="close" onClick={closeModal}><i class="fal fa-times fa-2x" style={{ color: "tomato" }}></i></button>
+                    <button className="close" onClick={closeModal}><i className="fal fa-times fa-2x" style={{ color: "tomato" }}></i></button>
                 </div>
 
             </Popup>

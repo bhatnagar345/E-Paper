@@ -54,47 +54,47 @@ const FeedBack = () => {
                     <button style={{ background: "#8abe39" }} onClick={() => setOpen(o => !o)}><h7> We are Listening</h7></button>
                 </div>
             </div>
-            <Popup open={open} closeOnDocumentClick onClose={closeModal} className="popup">
+            <Popup open={open} closeOnDocumentClick onClose={closeModal} className="popup" >
 
-                <div className="contact container">
+                <div className="contact container" >
                     <div className="items">
                         <h5 className="mb-1" style={{fontWeight:"600" }}>Thank you so much for taking the time</h5>
                         <p className="mb-3" style={{fontWeight:"600" }}>Please provide the details below</p>
 
-                        <div class="mb-3">
-                            <label  id="formGroupExampleInput" class="form-label">First Name</label>
-                            <input type="text" class="form-control"  placeholder="First name" aria-label="First name" onChange={changing}
+                        <div className="mb-3">
+                            <label  id="formGroupExampleInput" className="form-label">First Name</label>
+                            <input type="text" className="form-control"  placeholder="First name" aria-label="First name" onChange={changing}
                                 name="fname"
                                 value={name.fname} required />
                         </div>
-                        <div class="mb-3">
-                        <label  id="formGroupExampleInput" class="form-label">Last Name</label>
-                            <input type="text" class="form-control"  placeholder="Last name" aria-label="Last name" onChange={changing}
+                        <div className="mb-3">
+                        <label  id="formGroupExampleInput" className="form-label">Last Name</label>
+                            <input type="text" className="form-control"  placeholder="Last name" aria-label="Last name" onChange={changing}
                                 name="lname"
                                 value={name.lname} required />
                         </div>
 
-                        <div class="mb-3">
-                            <label id="formGroupExampleInput" class="form-label">E-mail ID</label>
-                            <input type="email" class="form-control"  placeholder="E-Mail ID" onChange={changing}
+                        <div className="mb-3">
+                            <label id="formGroupExampleInput" className="form-label">E-mail ID</label>
+                            <input type="email" className="form-control"  placeholder="E-Mail ID" onChange={changing}
                                 name="Eid"
                                 value={name.Eid} required />
                         </div>
-                        <div class="mb-4">
-                            <label id="formGroupExampleInput" class="form-label">Your Message</label>
-                            <textarea class="form-control" id="formGroupExampleInput3" placeholder="Your Feedback" onChange={changing}
+                        <div className="mb-4">
+                            <label id="formGroupExampleInput" className="form-label">Your Message</label>
+                            <textarea className="form-control" id="formGroupExampleInput3" placeholder="Your Feedback" onChange={changing}
                                 name="msg"
                                 value={name.msg}
-                                style={{ height: "100px" }}
+                                // style={{ height: "auto" }}
                             />
                         </div>
-                        <div class="mb-3" style={{ width: "100px", margin: "auto" }}>
-                            {/* <label for="formGroupExampleInput" class="form-label">E-mail ID</label> */}
-                            <input type="submit" class="form-control" id="formGroupExampleInput" onClick={onSubmits} style={{background:"tomato",fontWeight:"600",width:"120px"}}/>
+                        <div className="mb-3" style={{ width: "100px", margin: "auto" }}>
+                            {/* <label for="formGroupExampleInput" className="form-label">E-mail ID</label> */}
+                            <input type="submit" className="form-control" id="formGroupExampleInput" onClick={onSubmits} style={{background:"tomato",fontWeight:"600",width:"120px"}}/>
                         </div>
                     </div>
                 </div>
-                <button className="close popclose" onClick={closeModal}><i class="fal fa-times fa-2x" style={{ color: "tomato" }}></i></button>
+                <button className="close popclose" onClick={closeModal}><i className="fal fa-times fa-lg" style={{ color: "tomato" }}></i></button>
             </Popup>
         </div>
     );
